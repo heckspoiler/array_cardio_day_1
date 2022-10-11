@@ -105,7 +105,28 @@ console.log(ageSort)
 
 // Aufgabe 7: Leute alphabetisch sortieren nach Nachnamen
 
+const alphabetical = people.sort(function(lastOne, nextOne) {
+  const [aLast, aFirst] = lastOne.split(', ');
+  const [bLast, bFirst] = nextOne.split(', ');
+  return aLast > bLast ? 1 : -1;
+});
+
+console.table(alphabetical);
 
 
+// Aufgabe 8: Die Anzahl der verschiedenen Wörter aufsummieren
 
 
+const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+const map = data.reduce(function(obj, item) {
+  if(!obj[item]){
+    obj[item] = 0;
+  }
+  obj[item]++;
+  return(obj);
+}, {
+  
+})
+
+console.log(map);
