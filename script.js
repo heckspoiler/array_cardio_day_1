@@ -77,7 +77,35 @@ geschwungenen Klammer noch eine 0 setzen, damit die Funktion weiss, wo das 'tota
 
 // Aufgabe 5: Die Erfinder nach Anzahl gelebter Jahre ordnen.
 
-const age = inventors.sort(function(a) {
-    let 
+
+
+const ageSort = inventors.sort(function(a, b){
+    const lastGuy = a.passed - a.year;
+    const nextGuy = b.passed - b.year;
+    return lastGuy > nextGuy ? -1 : 1;
 })
+
+console.log(ageSort)
+
+// Aufgabe 6: Eine Liste kreieren von Boulevards in Paris, welche 'de' irgendwo enthalten. 
+ // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris 
+ // Übung nicht möglich, weil dieser Hurensohn nicht sagt, wie man DOM nutz in VS Code oder Code Editor. 
+ //.mw-category findet man im DOM der Wikipedia-Homepage, umfasst alle Links.
+ // textContent gibt nur den Text der gewählten Einheit zurück. 
+ // durch querySelector bekommt man eine NodeList zurück, jedoch braucht man für map() einen Array! 
+
+ /* 
+ 
+ const category = document.querySelector('.mw-category');
+ const link = category.[...querySelectorAll('a')]; // <- entweder so Array machen oder so --> Array.from(category.querySelectorAll('a'));
+
+ const de = links.map(link => link.textContent);
+*/
+
+
+// Aufgabe 7: Leute alphabetisch sortieren nach Nachnamen
+
+
+
+
 
