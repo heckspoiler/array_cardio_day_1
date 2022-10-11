@@ -20,8 +20,10 @@ const inventors = [
     'Berne, Eric', 'Berra, Yogi', 'Berry, Wendell', 'Bevan, Aneurin', 'Ben-Gurion, David', 'Bevel, Ken', 'Biden, Joseph', 'Bennington, Chester', 'Bierce, Ambrose',
     'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
   ];
-  
 
+
+  
+// Aufgabe 1
 const fifteen = inventors.filter(function(inventor) {
     if(inventor.year >= 1500 && inventor.year < 1600){
         return true;
@@ -30,12 +32,36 @@ const fifteen = inventors.filter(function(inventor) {
     }
 })
 
-  console.log(fifteen)
+console.table(fifteen)
+// Aufgabe 2
 
-  const names = inventors.map(function(arr){
+  const fullNames = inventors.map(function(arr){
     return `${arr.first} ${arr.last}`
   })
 
-  console.log(names)
+  console.table(fullNames)
 
-  
+  // Aufgabe 3
+
+  const birthDate = inventors.sort(function(a, b) {
+    if(a.year > b.year) {
+        return 1;
+    } else {
+        return -1;
+    }
+  })
+
+/* anders geschrieben: 
+const birthDate = inventors.sort((a, b) => a.year > b.year ? 1 : - 1) 
+
+--> das heisst so viel wie, wenn a.year grösser ist als b.year, sprich wenn das 'true' ist (? steht für true), wird 1 returned, andererseits -1 (der : steht für "andererseits", blöde gesagt). Ein if-else statement mit Symbolen. 
+Somit werden die unterschiedlichen Werte wie "herumgeschaufelt", indem sie einen Wert 1 dazubekommen oder nicht. Es wird verglichen, wenn a.year höher ist +1, wenn a.year tiefer ist -1, somit entsteht eine "Summe".
+*/
+
+console.table(birthDate);
+
+
+// Aufgabe 4
+
+const yearsLived = inventors 
+
