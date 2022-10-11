@@ -23,7 +23,7 @@ const inventors = [
 
 
   
-// Aufgabe 1
+// Aufgabe 1: Erfinder herausfiltern, welche im 1500 geboren wurden. 
 const fifteen = inventors.filter(function(inventor) {
     if(inventor.year >= 1500 && inventor.year < 1600){
         return true;
@@ -33,7 +33,9 @@ const fifteen = inventors.filter(function(inventor) {
 })
 
 console.table(fifteen)
-// Aufgabe 2
+
+
+// Aufgabe 2: einen Array ausgeben, welcher die Vornamen und Nachnamen der Erfinder beinhaltet.
 
   const fullNames = inventors.map(function(arr){
     return `${arr.first} ${arr.last}`
@@ -41,7 +43,7 @@ console.table(fifteen)
 
   console.table(fullNames)
 
-  // Aufgabe 3
+  // Aufgabe 3: Die Geburtsjahre der Erfinder aufsteigend sortieren.
 
   const birthDate = inventors.sort(function(a, b) {
     if(a.year > b.year) {
@@ -61,7 +63,21 @@ Somit werden die unterschiedlichen Werte wie "herumgeschaufelt", indem sie einen
 console.table(birthDate);
 
 
-// Aufgabe 4
+// Aufgabe 4: Herausfinden, wie viele Jahre alle Erfinder zusammengerechnet gelebt haben
 
-const yearsLived = inventors 
+const yearsLived = inventors.reduce((total, inventor) => {
+    return total + (inventor.passed - inventor.year);
+}, 0);
+
+console.log(yearsLived)
+
+/* die reduce-Funktion gibt nimmt den Wert 'total' (von uns definiert) und gibt immer einen weiteren Inventor dazu.
+Grundsätzlich funktioniert es wie ein normaler Loop, ist es ja auch. Um alles aufzusummieren, muss man nach dem Schliessen der
+geschwungenen Klammer noch eine 0 setzen, damit die Funktion weiss, wo das 'total' beginnt.*/
+
+// Aufgabe 5: Die Erfinder nach Anzahl gelebter Jahre ordnen.
+
+const age = inventors.sort(function(a) {
+    let 
+})
 
